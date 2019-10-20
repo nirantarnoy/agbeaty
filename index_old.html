@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>AG Beauty</title>
+  <link rel="shortcut icon" type="image/ico" href="res/icons/icon32.ico" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+  <!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>-->
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <!-- Custom styles for this template -->
+  <link href="css/business-frontpage.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <style>
+    @font-face{
+      font-family: 'Cloud-Light';
+      src: url('res/fonts/Cloud-Light.ttf') format('truetype');
+      /* src: url('../fonts/thsarabunnew-webfont.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/thsarabunnew-webfont.woff') format('woff'),
+            url('../fonts/EkkamaiStandard-Light.ttf') format('truetype');*/
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face{
+      font-family: 'Cloud-Bold';
+      src: url('res/fonts/Cloud-Bold.ttf') format('truetype');
+      /* src: url('../fonts/thsarabunnew-webfont.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/thsarabunnew-webfont.woff') format('woff'),
+            url('../fonts/EkkamaiStandard-Light.ttf') format('truetype');*/
+      font-weight: normal;
+      font-style: normal;
+    }
+    body{
+      font-family: 'Cloud-Light';
+    }
+    .btn-on-top{
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+
+    }
+    .menu-main{
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .img-std{
+      /*opacity: 0.5;*/
+    }
+    .img-std:hover{
+      opacity: 1;
+      /*-webkit-transform: scale(1.3);*/
+      /*-ms-transform: scale(1.3);*/
+      /*transform: scale(1.1);*/
+    }
+    .my-card:hover{
+      -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+      transform: scale(1.1);
+    }
+    .my-card:hover{
+      -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+      transform: scale(1.1);
+      /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+    }
+    .service-title{
+      font-family: Cloud-Light;
+      font-weight: bold;
+    }
+    .carousel-indicators li {
+      display: inline-block;
+      width: 30px;
+      height: 5px;
+      /*margin: 1px;*/
+      /*text-indent: -999px;*/
+      /*cursor: pointer;*/
+      background-color: #ececf6; \9;
+      /*background-color: rgba(255, 255, 255, 100);*/
+      /*border: 1px solid #000000;*/
+      /*border-radius: 10px;*/
+    }
+    .carousel-indicators .active{
+      background-color: #17a2b8;
+    }
+
+    /*my-sub-bar*/
+
+    ul.my-sub-nav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #1b1e21;
+      vertical-align: middle;
+      font-size: 10px;
+    }
+
+    ul.my-sub-nav li {
+      float: left;
+      vertical-align: middle;
+    }
+
+    ul.my-sub-nav li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    /* Change the link color to #111 (black) on hover */
+    ul.my-sub-nav li a:hover {
+      background-color: #6c757d;
+    }
+    /*.dropdown-large {*/
+      /*position: static !important;*/
+    /*}*/
+    /*.dropdown-menu-large {*/
+      /*margin-left: 16px;*/
+      /*margin-right: 16px;*/
+      /*padding: 20px 0px;*/
+    /*}*/
+    /*.dropdown-menu-large > li > ul {*/
+      /*padding: 0;*/
+      /*margin: 0;*/
+    /*}*/
+    /*.dropdown-menu-large > li > ul > li {*/
+      /*list-style: none;*/
+    /*}*/
+    /*.dropdown-menu-large > li > ul > li > a {*/
+      /*display: block;*/
+      /*padding: 3px 20px;*/
+      /*clear: both;*/
+      /*font-weight: normal;*/
+      /*line-height: 1.428571429;*/
+      /*color: #333333;*/
+      /*white-space: normal;*/
+    /*}*/
+    /*.dropdown-menu-large > li ul > li > a:hover,*/
+    /*.dropdown-menu-large > li ul > li > a:focus {*/
+      /*text-decoration: none;*/
+      /*color: #262626;*/
+      /*background-color: #f5f5f5;*/
+    /*}*/
+    /*.dropdown-menu-large .disabled > a,*/
+    /*.dropdown-menu-large .disabled > a:hover,*/
+    /*.dropdown-menu-large .disabled > a:focus {*/
+      /*color: #999999;*/
+    /*}*/
+    /*.dropdown-menu-large .disabled > a:hover,*/
+    /*.dropdown-menu-large .disabled > a:focus {*/
+      /*text-decoration: none;*/
+      /*background-color: transparent;*/
+      /*background-image: none;*/
+      /*filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);*/
+      /*cursor: not-allowed;*/
+    /*}*/
+    /*.dropdown-menu-large .dropdown-header {*/
+      /*color: #428bca;*/
+      /*font-size: 18px;*/
+    /*}*/
+    /*@media (max-width: 1028px) {*/
+      /*.dropdown-menu-large {*/
+        /*margin-left: 0 ;*/
+        /*margin-right: 0 ;*/
+      /*}*/
+      /*.dropdown-menu-large > li {*/
+        /*margin-bottom: 30px;*/
+      /*}*/
+      /*.dropdown-menu-large > li:last-child {*/
+        /*margin-bottom: 0;*/
+      /*}*/
+      /*.dropdown-menu-large .dropdown-header {*/
+        /*padding: 3px 15px !important;*/
+      /*}*/
+    /*}*/
+
+
+    .topnav {
+      /*margin-top: 40px;*/
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .active {
+      /*background-color: #4CAF50;*/
+      color: white;
+    }
+
+    .topnav .icon {
+      display: none;
+    }
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown .dropbtn {
+      font-size: 12px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 700px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 9999;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .topnav a:hover, .dropdown:hover .dropbtn {
+      background-color: #555;
+      color: white;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .dropdown:hover .dropdown-content {
+      z-index: 10000;
+      display: block;
+    }
+
+    @media screen and (max-width: 600px) {
+      .topnav a:not(:first-child), .dropdown .dropbtn {
+        display: none;
+      }
+      .topnav a.icon {
+        float: right;
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .topnav.responsive {position: relative;}
+      .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+      .topnav.responsive .dropdown {float: none;}
+      .topnav.responsive .dropdown-content {position: relative;}
+      .topnav.responsive .dropdown .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+    }
+
+  </style>
+
+</head>
+<body>
+  <!--<div style="width: 100%;height: 50px;margin-top: -50px;background-color: white">-->
+    <!--<div class="container">-->
+      <!--<div class="row">-->
+        <!--<div class="col-lg-3">-->
+          <!--<a class="navbar-brand" href="#">-->
+            <!--<img src="res/logo/ag_logo_hori-1.jpg" style="width: 40%" alt="">-->
+          <!--</a>-->
+        <!--</div>-->
+        <!--<div class="col-lg-3"></div>-->
+        <!--<div class="col-lg-3">-->
+          <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #1b1e21;text-decoration: none;">-->
+            <!--<img src="res/flag/thailand-flag-icon-16.png" alt="" > ภาษา<span class="caret"></span></a>-->
+          <!--<ul class="dropdown-menu">-->
+            <!--<li style="padding-left: 15px;"><a href="#"  style="color: #1b1e21;text-decoration: none;"><img src="res/flag/thailand-flag-icon-16.png" alt="" > ไทย</a></li>-->
+            <!--<li style="padding-left: 15px;"><a href="#"  style="color: #1b1e21;text-decoration: none;"><img src="res/flag/united-kingdom-flag-icon-16.png" alt="" > English</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+<!--<div class="col-lg-3"></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">-->
+    <!--<div class="container">-->
+      <!--<a class="navbar-brand" href="index.html">-->
+        <!--<img src="res/logo/ag_logo_hori-1.jpg" style="width: 20%" alt="">-->
+      <!--</a>-->
+      <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">-->
+        <!--<span class="navbar-toggler-icon"></span>-->
+      <!--</button>-->
+      <!--<div class="collapse navbar-collapse menu-main" id="navbarResponsive">-->
+        <!--<ul class="nav navbar-nav" style="padding-right: 15px;">-->
+          <!--<li class="nav-item dropdown">-->
+            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #1b1e21;text-decoration: none;"><img-->
+                    <!--src="res/flag/thailand-flag-icon-16.png" alt="" > ภาษา<span class="caret"></span></a>-->
+            <!--<ul class="dropdown-menu">-->
+              <!--<li style="padding-left: 15px;"><a href="#"  style="color: #1b1e21;text-decoration: none;"><img src="res/flag/thailand-flag-icon-16.png" alt="" > ไทย</a></li>-->
+              <!--<li style="padding-left: 15px;"><a href="#"  style="color: #1b1e21;text-decoration: none;"><img src="res/flag/united-kingdom-flag-icon-16.png" alt="" > English</a></li>-->
+            <!--</ul>-->
+          <!--</li>-->
+        <!--</ul>-->
+        <!--<form class="navbar-form navbar-left" style="margin-top: 10px;" role="search">-->
+          <!--<div class="form-group">-->
+            <!--<input type="text" class="form-control" style="width: 100px;" placeholder="Search">-->
+          <!--</div>-->
+        <!--</form>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</nav>-->
+
+  <!--sub-nav-->
+  <!--<div style="height: 40px;margin-top: 30px; background-color: #1b1e21;vertical-align: middle;">-->
+    <!--<div class="container" style=" overflow: auto;white-space: nowrap;">-->
+      <!--<ul class="my-sub-nav" style="text-transform: uppercase;">-->
+        <!--<li><a class="active" href="index.html">Home</a></li>-->
+        <!--<li class="dropdown dropdown-large">-->
+
+          <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Skincare</a>-->
+          <!--<div class="container">-->
+          <!--<ul class="dropdown-menu dropdown-menu-large row">-->
+            <!--<li class="col-sm-3">-->
+              <!--<ul>-->
+                <!--<li class="dropdown-header">Glyphicons</li>-->
+                <!--<li><a href="#">Available glyphs</a></li>-->
+                <!--<li class="disabled"><a href="#">How to use</a></li>-->
+                <!--<li><a href="#">Examples</a></li>-->
+                <!--<li class="divider"></li>-->
+                <!--<li class="dropdown-header">Dropdowns</li>-->
+                <!--<li><a href="#">Example</a></li>-->
+                <!--<li><a href="#">Aligninment options</a></li>-->
+                <!--<li><a href="#">Headers</a></li>-->
+                <!--<li><a href="#">Disabled menu items</a></li>-->
+              <!--</ul>-->
+            <!--</li>-->
+            <!--<li class="col-sm-3">-->
+              <!--<ul>-->
+                <!--<li class="dropdown-header">Button groups</li>-->
+                <!--<li><a href="#">Basic example</a></li>-->
+                <!--<li><a href="#">Button toolbar</a></li>-->
+                <!--<li><a href="#">Sizing</a></li>-->
+                <!--<li><a href="#">Nesting</a></li>-->
+                <!--<li><a href="#">Vertical variation</a></li>-->
+                <!--<li class="divider"></li>-->
+                <!--<li class="dropdown-header">Button dropdowns</li>-->
+                <!--<li><a href="#">Single button dropdowns</a></li>-->
+              <!--</ul>-->
+            <!--</li>-->
+
+          <!--</ul>-->
+          <!--</div>-->
+        <!--</li>-->
+        <!--<li><a href="#contact">111SKIN</a></li>-->
+        <!--<li><a href="#about">Dr.Barbara Sturm</a></li>-->
+        <!--<li><a href="#about">Evidens</a></li>-->
+        <!--<li><a href="#about">Omorovicza Budapest</a></li>-->
+        <!--<li><a href="#about">viliv</a></li>-->
+        <!--<li><a href="#about">Best Sellers</a></li>-->
+        <!--<li><a href="#about">Special Set</a></li>-->
+        <!--<li><a href="#about">Promotions&Sale</a></li>-->
+        <!--<li><a href="#about">Skillcaretool</a></li>-->
+        <!--<li><a href="">Contact Us</a></li>-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</div>-->
+
+
+
+
+
+  <div class="topnav" id="myTopnav">
+    <div class="container">
+      <a href="#home" class="active">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <div class="dropdown">
+        <button class="dropbtn">Dropdown
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <a href="#about">About</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  <!--<nav class="navbar navbar-expand-lg navbar-inverse bg-dark" style="margin-top: 20px;position: relative">-->
+    <!--<div class="container" style="overflow: visible">-->
+      <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">-->
+        <!--<span class="navbar-toggler-icon"></span>-->
+      <!--</button>-->
+      <!--<div class="collapse navbar-collapse menu-main" id="navbarResponsive2">-->
+        <!--<ul class="nav navbar-nav" style="font-size: 14px;">-->
+
+          <!--<li class="nav-item">-->
+            <!--<a class="nav-link" href="#" style="color: white">Home</a>-->
+          <!--</li>-->
+          <!--<li class="nav-item">-->
+            <!--<a class="nav-link" href="#" style="color: white">Skincare</a>-->
+          <!--</li>-->
+          <!--<li class="nav-item">-->
+          <!--<a class="nav-link" href="#" style="color: white">111SKIN</a>-->
+        <!--</li>-->
+          <!--<li class="nav-item">-->
+            <!--<a class="nav-link" href="#" style="color: white">Dr.Barbara Sturm</a>-->
+          <!--</li>-->
+          <!--<li class="nav-item">-->
+            <!--<a class="nav-link" href="#" style="color: white">Evidens</a>-->
+          <!--</li>-->
+          <!--<li class="nav-item">-->
+            <!--<a class="nav-link" href="#" style="color: white">Omorovicza Budapest</a>-->
+          <!--</li>-->
+          <!--<li class="nav-item">-->
+            <!--<a class="nav-link" href="#" style="color: white">viliv</a>-->
+          <!--</li>-->
+          <!--<li class="nav-item">-->
+            <!--<a class="nav-link" href="#" style="color: white">Best Sellers</a>-->
+          <!--</li>-->
+          <!--<li class="nav-item">-->
+            <!--<a class="nav-link" href="#" style="color: white">Special Set</a>-->
+          <!--</li>-->
+          <!--<li class="nav-item">-->
+            <!--<a class="nav-link" href="#" style="color: white">Promotions&Sale</a>-->
+          <!--</li>-->
+          <!--<li class="nav-item">-->
+            <!--<a class="nav-link" href="#" style="color: white;">Contact</a>-->
+          <!--</li>-->
+        <!--</ul>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</nav>-->
+
+  <!-- Header -->
+
+
+  <!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">-->
+    <!--<ol class="carousel-indicators">-->
+      <!--<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>-->
+      <!--<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>-->
+      <!--<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
+    <!--</ol>-->
+    <!--<div class="carousel-inner">-->
+      <!--<div class="carousel-item active">-->
+        <!--<header class="bg-white py-5 mb-5">-->
+          <!--<div class="container h-100">-->
+            <!--<div class="row h-100 align-items-center">-->
+              <!--<div class="col-lg-6">-->
+                <!--<image src="res/images/Sturm/Sturm_190916_0030.jpg" style="width: 90%;margin-top: 10%;"></image>-->
+              <!--</div>-->
+              <!--<div class="col-lg-6" style="text-align: center;">-->
+
+                <!--<br>-->
+                <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.-->
+
+              <!--</div>-->
+
+
+            <!--</div>-->
+          <!--</div>-->
+        <!--</header>-->
+      <!--</div>-->
+      <!--<div class="carousel-item">-->
+        <!--<header class="bg-white py-5 mb-5">-->
+          <!--<div class="container h-100">-->
+            <!--<div class="row h-100 align-items-center">-->
+              <!--<div class="col-lg-6">-->
+                <!--<image src="res/images/111skin/111skin_190916_0006.jpg" style="width: 90%;margin-top: 0%;"></image>-->
+              <!--</div>-->
+              <!--<div class="col-lg-6" style="text-align: center;">-->
+
+                <!--<br>-->
+                <!--<h1 style="color: #1b6d85;font-weight: bold">111Skin</h1>-->
+
+                <!--<p class="lead" style="color: #333;font-weight: bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>-->
+
+
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</header>-->
+      <!--</div>-->
+      <!--<div class="carousel-item">-->
+        <!--<header class="bg-white py-5 mb-5">-->
+          <!--<div class="container h-100">-->
+            <!--<div class="row h-100 align-items-center">-->
+              <!--<div class="col-lg-6">-->
+                <!--<image src="res/images/Evidens/Evidens_190916_0010.jpg" style="width: 90%;margin-top: 0%;"></image>-->
+              <!--</div>-->
+              <!--<div class="col-lg-6" style="text-align: center;">-->
+
+                <!--<br>-->
+                <!--<h1 style="color: #1b6d85;font-weight: bold">Evidens</h1>-->
+
+                <!--<p class="lead" style="color: #333;font-weight: bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>-->
+
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</header>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<a class="carousel-control-prev" style="background-colors: #17a2b8" href="#carouselExampleIndicators" role="button" data-slide="prev">-->
+      <!--<span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+      <!--<span class="sr-only" style="background-color: #17a2b8">Previous</span>-->
+    <!--</a>-->
+    <!--<a class="carousel-control-next" style="color: #17a2b8" href="#carouselExampleIndicators" role="button" data-slide="next">-->
+      <!--<span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+      <!--<span class="sr-only" style="color: #17a2b8">Next</span>-->
+    <!--</a>-->
+  <!--</div>-->
+
+  <button onclick="topFunction()" class="btn btn-outline-info btn-on-top" id="myBtn" title="Go to top">กลับขึ้นข้างบน</button>
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12 mb-5">
+        <h2>All Products</h2>
+        <hr>
+        <!--<p style="font-size: 22px"> <span class="text-info" style="font-weight: bold">&nbsp;&nbsp;Ag beauty</span> </p>-->
+        <!--<a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>-->
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+      <div class="col-md-3 mb-5 my-card">
+        <div class="card h-100" style="border: none">
+          <img class="card-img-top img-std" src="res/images/111Skin/111skin_190916_0020.jpg" alt="">
+          <div class="card-body">
+            <h4 class="card-title text-secondary service-title">111Skin 190916</h4>
+            <p class="card-text">&nbsp;&nbsp</p>
+          </div>
+          <div class="card-footer" style="border: none">
+            <a href="#" class="btn btn-outline-secondary">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-5 my-card">
+        <div class="card h-100" style="border: none">
+          <img class="card-img-top img-std" src="res/images/111Skin/111skin_190916_0013.jpg" alt="">
+          <div class="card-body">
+            <h4 class="card-title text-secondary service-title">111Skin 0013</h4>
+            <p class="card-text">&nbsp;&nbsp</p>
+          </div>
+          <div class="card-footer" style="border: none">
+            <a href="#" class="btn btn-outline-secondary">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-5 my-card">
+        <div class="card h-100" style="border: none">
+          <img class="card-img-top img-std" src="res/images/111Skin/111skin_190916_0001.jpg" alt="">
+          <div class="card-body">
+            <h4 class="card-title text-secondary service-title">111Skin Test</h4>
+            <p class="card-text">&nbsp;&nbsp</p>
+          </div>
+          <div class="card-footer" style="border: none">
+            <a href="#" class="btn btn-outline-secondary">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-5 my-card">
+        <div class="card h-100" style="border: none">
+          <img class="card-img-top img-std" src="res/images/111Skin/111skin_190916_0011.jpg" alt="">
+          <div class="card-body">
+            <h4 class="card-title text-secondary service-title">111Skin Test</h4>
+            <p class="card-text">&nbsp;&nbsp</p>
+          </div>
+          <div class="card-footer" style="border: none">
+            <a href="#" class="btn btn-outline-secondary">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-md-12 mb-5">
+        <h2>Hot items</h2>
+        <hr>
+        <!--<p style="font-size: 22px"> <span class="text-info" style="font-weight: bold">&nbsp;&nbsp;Ag beauty</span> </p>-->
+        <!--<a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>-->
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-2 mb-5 my-card">
+        <div class="card h-100" style="border: none">
+          <img class="card-img-top img-std" src="res/images/111Skin/111skin_190916_0020.jpg" alt="">
+          <div class="card-body">
+            <h4 class="card-title text-secondary service-title">111Skin 190916</h4>
+            <p class="card-text">&nbsp;&nbsp</p>
+          </div>
+          <div class="card-footer" style="border: none">
+            <a href="#" class="btn btn-outline-secondary">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 mb-5 my-card">
+        <div class="card h-100" style="border: none">
+          <img class="card-img-top img-std" src="res/images/111Skin/111skin_190916_0020.jpg" alt="">
+          <div class="card-body">
+            <h4 class="card-title text-secondary service-title">111Skin 190916</h4>
+            <p class="card-text">&nbsp;&nbsp</p>
+          </div>
+          <div class="card-footer" style="border: none">
+            <a href="#" class="btn btn-outline-secondary">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 mb-5 my-card">
+        <div class="card h-100" style="border: none">
+          <img class="card-img-top img-std" src="res/images/111Skin/111skin_190916_0013.jpg" alt="">
+          <div class="card-body">
+            <h4 class="card-title text-secondary service-title">111Skin 0013</h4>
+            <p class="card-text">&nbsp;&nbsp</p>
+          </div>
+          <div class="card-footer" style="border: none">
+            <a href="#" class="btn btn-outline-secondary">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 mb-5 my-card">
+        <div class="card h-100" style="border: none">
+          <img class="card-img-top img-std" src="res/images/111Skin/111skin_190916_0001.jpg" alt="">
+          <div class="card-body">
+            <h4 class="card-title text-secondary service-title">111Skin Test</h4>
+            <p class="card-text">&nbsp;&nbsp</p>
+          </div>
+          <div class="card-footer" style="border: none">
+            <a href="#" class="btn btn-outline-secondary">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 mb-5 my-card">
+        <div class="card h-100" style="border: none">
+          <img class="card-img-top img-std" src="res/images/111Skin/111skin_190916_0011.jpg" alt="">
+          <div class="card-body">
+            <h4 class="card-title text-secondary service-title">111Skin Test</h4>
+            <p class="card-text">&nbsp;&nbsp</p>
+          </div>
+          <div class="card-footer" style="border: none">
+            <a href="#" class="btn btn-outline-secondary">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 mb-5 my-card">
+        <div class="card h-100" style="border: none">
+          <img class="card-img-top img-std" src="res/images/111Skin/111skin_190916_0011.jpg" alt="">
+          <div class="card-body">
+            <h4 class="card-title text-secondary service-title">111Skin Test</h4>
+            <p class="card-text">&nbsp;&nbsp</p>
+          </div>
+          <div class="card-footer" style="border: none">
+            <a href="#" class="btn btn-outline-secondary">BUY NOW</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; agbeauty 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+      $(function () {
+          window.onscroll = function() {scrollFunction()};
+          $(".carouselExampleIndicators").carousel({
+              interval: 2000
+          });
+
+      });
+      function scrollFunction() {
+          if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+              document.getElementById("myBtn").style.display = "block";
+
+          } else {
+              document.getElementById("myBtn").style.display = "none";
+
+          }
+      }
+      function topFunction() {
+          //  document.body.scrollTop = 0;
+          //  document.documentElement.scrollTop = 0;
+          var aid = ".site-index"
+          // alert(aid);
+          $('html,body').animate({scrollTop: $(aid).offset().top -100},'slow');
+      }
+  </script>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+</body>
+
+</html>
